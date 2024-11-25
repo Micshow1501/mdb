@@ -1,0 +1,155 @@
+use customerloan
+switched to db customerloan
+> db.customer.insert({cid:1,cname:"Dipali",address:"Pune"})
+WriteResult({ "nInserted" : 1 })
+> db.customer.insert({cid:2,cname:"Mr.Patil",address:"Pimpri"})
+WriteResult({ "nInserted" : 1 })
+> db.customer.insert({cid:3,cname:"Mr.Sharma",address:"Pune"})
+WriteResult({ "nInserted" : 1 })
+> db.customer.find({}).pretty()
+{
+	"_id" : ObjectId("6576e2caae5a4febbd618e19"),
+	"cid" : 1,
+	"cname" : "Dipali",
+	"address" : "Pune"
+}
+{
+	"_id" : ObjectId("6576e2e5ae5a4febbd618e1a"),
+	"cid" : 2,
+	"cname" : "Mr.Patil",
+	"address" : "Pimpri"
+}
+{
+	"_id" : ObjectId("6576e314ae5a4febbd618e1b"),
+	"cid" : 3,
+	"cname" : "Mr.Sharma",
+	"address" : "Pune"
+}
+> db.loan.insert({lid:101,cname:"Dipali",ltype:"HomeLoan",lamount:150000,lcity:"Pimpri"})
+WriteResult({ "nInserted" : 1 })
+> db.loan.insert({lid:102,cname:"Mr.Patil",ltype:"Carloan",lamount:180000,lcity:"Pune"})
+WriteResult({ "nInserted" : 1 })
+> db.loan.insert({lid:103,cname:"Mr.Sharma",ltype:"educationloan",lamount:190000,lcity:"Mumbai"})
+WriteResult({ "nInserted" : 1 })
+> db.loan.find({}).pretty()
+{
+	"_id" : ObjectId("6576e4f5ae5a4febbd618e1c"),
+	"lid" : 101,
+	"cname" : "Dipali",
+	"ltype" : "HomeLoan",
+	"lamount" : 150000,
+	"lcity" : "Pimpri"
+}
+{
+	"_id" : ObjectId("6576e53eae5a4febbd618e1d"),
+	"lid" : 102,
+	"cname" : "Mr.Patil",
+	"ltype" : "Carloan",
+	"lamount" : 180000,
+	"lcity" : "Pune"
+}
+{
+	"_id" : ObjectId("6576e57bae5a4febbd618e1e"),
+	"lid" : 103,
+	"cname" : "Mr.Sharma",
+	"ltype" : "educationloan",
+	"lamount" : 190000,
+	"lcity" : "Mumbai"
+}
+> db.customer.find({cname:{$regex:"D"}}).pretty()
+{
+	"_id" : ObjectId("6576e2caae5a4febbd618e19"),
+	"cid" : 1,
+	"cname" : "Dipali",
+	"address" : "Pune"
+}
+> db.customer.find({cname:{$regex:"Mr.P"}}).pretty()
+{
+	"_id" : ObjectId("6576e2e5ae5a4febbd618e1a"),
+	"cid" : 2,
+	"cname" : "Mr.Patil",
+	"address" : "Pimpri"
+}
+> db.loan.insert({lid:104,cname:"Mr.Patel",ltype:"educationloan",lamount:120000,lcity:"Pimpri"})
+WriteResult({ "nInserted" : 1 })
+> db.loan.find({}).pretty()
+{
+	"_id" : ObjectId("6576e4f5ae5a4febbd618e1c"),
+	"lid" : 101,
+	"cname" : "Dipali",
+	"ltype" : "HomeLoan",
+	"lamount" : 150000,
+	"lcity" : "Pimpri"
+}
+{
+	"_id" : ObjectId("6576e53eae5a4febbd618e1d"),
+	"lid" : 102,
+	"cname" : "Mr.Patil",
+	"ltype" : "Carloan",
+	"lamount" : 180000,
+	"lcity" : "Pune"
+}
+{
+	"_id" : ObjectId("6576e57bae5a4febbd618e1e"),
+	"lid" : 103,
+	"cname" : "Mr.Sharma",
+	"ltype" : "educationloan",
+	"lamount" : 190000,
+	"lcity" : "Mumbai"
+}
+{
+	"_id" : ObjectId("6576e8a9ae5a4febbd618e1f"),
+	"lid" : 104,
+	"cname" : "Mr.Patel",
+	"ltype" : "educationloan",
+	"lamount" : 120000,
+	"lcity" : "Pimpri"
+}
+}
+> db.loan.find({lcity:"Pimpri"}).sort({cname:-1}).pretty()
+{
+	"_id" : ObjectId("6576e8a9ae5a4febbd618e1f"),
+	"lid" : 104,
+	"cname" : "Mr.Patel",
+	"ltype" : "educationloan",
+	"lamount" : 120000,
+	"lcity" : "Pimpri"
+}
+{
+	"_id" : ObjectId("6576e4f5ae5a4febbd618e1c"),
+	"lid" : 101,
+	"cname" : "Dipali",
+	"ltype" : "HomeLoan",
+	"lamount" : 150000,
+	"lcity" : "Pimpri"
+}
+> db.loan.find({}).sort({"lamount":-1}).limit(1).pretty()
+{
+	"_id" : ObjectId("6576e57bae5a4febbd618e1e"),
+	"lid" : 103,
+	"cname" : "Mr.Sharma",
+	"ltype" : "educationloan",
+	"lamount" : 190000,
+	"lcity" : "Mumbai"
+> db.customer.update({address:"Pimpri"},{$set:{address:"Pune"}})
+WriteResult({ "nMatched" : 0, "nUpserted" : 0, "nModified" : 0 })
+> db.customer.find({}).pretty()
+{
+	"_id" : ObjectId("6576e2caae5a4febbd618e19"),
+	"cid" : 1,
+	"cname" : "Dipali",
+	"address" : "Pune"
+}
+{
+	"_id" : ObjectId("6576e2e5ae5a4febbd618e1a"),
+	"cid" : 2,
+	"cname" : "Mr.Patil",
+	"address" : "Pune"
+}
+{
+	"_id" : ObjectId("6576e314ae5a4febbd618e1b"),
+	"cid" : 3,
+	"cname" : "Mr.Sharma",
+	"address" : "Pune"
+}
+
