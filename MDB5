@@ -1,0 +1,281 @@
+slip5
+
+> use project
+switched to db project
+> db.project.insert({pid:1,pname:"project A",ptype:"devlopment",duration_month:6})
+Wrdb.project.insert({pid:2,pname:"project B",ptype:"testing",duration_month:4})
+WriteResult({ "nInserted" : 1 })
+> db.project.insert({pid:.3,pname:"project C",ptype:"design",duration_month:2})
+WriteResult({ "nInserted" : 1 })
+> db.project.insert({pid:.4,pname:"project D",ptype:"devlopment",duration_month:3})
+WriteResult({ "nInserted" : 1 })
+> db.project.insert({pid:5,pname:"project E",ptype:"testing",duration_month:5})
+WriteResult({ "nInserted" : 1 })
+> dp.project.find({}).pretty()
+uncaught exception: ReferenceError: dp is not defined :
+@(shell):1:1
+> db.project.find({}).pretty()
+{
+	"_id" : ObjectId("657b33eeab17ffde806f8163"),
+	"pid" : 1,
+	"pname" : "project A",
+	"ptype" : "devlopment",
+	"duration_month" : 6
+}
+{
+	"_id" : ObjectId("657b341cab17ffde806f8164"),
+	"pid" : 2,
+	"pname" : "project B",
+	"ptype" : "testing",
+	"duration_month" : 4
+}
+{
+	"_id" : ObjectId("657b35c2ab17ffde806f8165"),
+	"pid" : 0.3,
+	"pname" : "project C",
+	"ptype" : "design",
+	"duration_month" : 2
+}
+{
+	"_id" : ObjectId("657b35f5ab17ffde806f8166"),
+	"pid" : 0.4,
+	"pname" : "project D",
+	"ptype" : "devlopment",
+	"duration_month" : 3
+}
+{
+	"_id" : ObjectId("657b368eab17ffde806f8167"),
+	"pid" : 5,
+	"pname" : "project E",
+	"ptype" : "testing",
+	"duration_month" : 5
+}
+{
+	"_id" : ObjectId("657b3e4eaa1ca21243fe4b9d"),
+	"pid" : 1,
+	"pname" : "project A",
+	"ptype" : "devlopment",
+	"duration_month" : 6
+}
+{
+	"_id" : ObjectId("657b3e69aa1ca21243fe4b9e"),
+	"pid" : 2,
+	"pname" : "project B",
+	"ptype" : "testing",
+	"duration_month" : 4
+}
+{
+	"_id" : ObjectId("657b3e7aaa1ca21243fe4b9f"),
+	"pid" : 0.3,
+	"pname" : "project C",
+	"ptype" : "design",
+	"duration_month" : 2
+}
+{
+	"_id" : ObjectId("657b3e98aa1ca21243fe4ba0"),
+	"pid" : 0.4,
+	"pname" : "project D",
+	"ptype" : "devlopment",
+	"duration_month" : 3
+}
+{
+	"_id" : ObjectId("657b3ebfaa1ca21243fe4ba1"),
+	"pid" : 2,
+	"pname" : "project B",
+	"ptype" : "testing",
+	"duration_month" : 4
+}
+{
+	"_id" : ObjectId("657b3ec9aa1ca21243fe4ba2"),
+	"pid" : 0.3,
+	"pname" : "project C",
+	"ptype" : "design",
+	"duration_month" : 2
+}
+{
+	"_id" : ObjectId("657b3ecdaa1ca21243fe4ba3"),
+	"pid" : 0.4,
+	"pname" : "project D",
+	"ptype" : "devlopment",
+	"duration_month" : 3
+}
+{
+	"_id" : ObjectId("657b3edfaa1ca21243fe4ba4"),
+	"pid" : 5,
+	"pname" : "project E",
+	"ptype" : "testing",
+	"duration_month" : 5
+}
+> db.employeeproject.insert({eid:101,pid:1})
+WriteResult({ "nInserted" : 1 })
+> db.employeeproject.insert({eid:102,pid:2})
+WriteResult({ "nInserted" : 1 })
+> db.employeeproject.insert({eid:103,pid:3})
+WriteResult({ "nInserted" : 1 })
+> db.employeeproject.insert({eid:104,pid:4})
+WriteResult({ "nInserted" : 1 })
+> db.employeeproject.insert({eid:105,pid:5})
+WriteResult({ "nInserted" : 1 })
+> db.employee.insert({eid:101,ename:"mr.patil"})
+WriteResult({ "nInserted" : 1 })
+> db.employee.insert({eid:102,ename:"mr.kumar"})
+WriteResult({ "nInserted" : 1 })
+> db.employee.insert({eid:103,ename:"mr.singh"})
+WriteResult({ "nInserted" : 1 })
+> db.employee.insert({eid:104,ename:"mr.joshi"})
+WriteResult({ "nInserted" : 1 })
+> db.employee.insert({eid:105,ename:"mr.deshmukh"})
+WriteResult({ "nInserted" : 1 })
+> db.employee.find({}).pretty()
+{
+	"_id" : ObjectId("657b372aab17ffde806f8168"),
+	"eid" : 101,
+	"ename" : "mr.patil"
+}
+{
+	"_id" : ObjectId("657b373fab17ffde806f8169"),
+	"eid" : 102,
+	"ename" : "mr.kumar"
+}
+{
+	"_id" : ObjectId("657b3756ab17ffde806f816a"),
+	"eid" : 103,
+	"ename" : "mr.singh"
+}
+{
+	"_id" : ObjectId("657b3766ab17ffde806f816b"),
+	"eid" : 104,
+	"ename" : "mr.joshi"
+}
+{
+	"_id" : ObjectId("657b37a7ab17ffde806f816c"),
+	"eid" : 105,
+	"ename" : "mr.deshmukh"
+}
+{
+	"_id" : ObjectId("657b3f7aaa1ca21243fe4baa"),
+	"eid" : 101,
+	"ename" : "mr.patil"
+}
+{
+	"_id" : ObjectId("657b3f9aaa1ca21243fe4bab"),
+	"eid" : 102,
+	"ename" : "mr.kumar"
+}
+{
+	"_id" : ObjectId("657b3fa6aa1ca21243fe4bac"),
+	"eid" : 103,
+	"ename" : "mr.singh"
+}
+{
+	"_id" : ObjectId("657b3fb8aa1ca21243fe4bad"),
+	"eid" : 104,
+	"ename" : "mr.joshi"
+}
+{
+	"_id" : ObjectId("657b3fd6aa1ca21243fe4bae"),
+	"eid" : 105,
+	"ename" : "mr.deshmukh"
+}
+> db.employeeproject.find({}).pretty()
+{ "_id" : ObjectId("657b3d6eab17ffde806f816d"), "eid" : 101, "pid" : 1 }
+{ "_id" : ObjectId("657b3d76ab17ffde806f816e"), "eid" : 102, "pid" : 2 }
+{ "_id" : ObjectId("657b3d7dab17ffde806f816f"), "eid" : 103, "pid" : 3 }
+{ "_id" : ObjectId("657b3d84ab17ffde806f8170"), "eid" : 104, "pid" : 4 }
+{ "_id" : ObjectId("657b3d8eab17ffde806f8171"), "eid" : 105, "pid" : 5 }
+{ "_id" : ObjectId("657b3f2eaa1ca21243fe4ba5"), "eid" : 101, "pid" : 1 }
+{ "_id" : ObjectId("657b3f36aa1ca21243fe4ba6"), "eid" : 102, "pid" : 2 }
+{ "_id" : ObjectId("657b3f43aa1ca21243fe4ba7"), "eid" : 103, "pid" : 3 }
+{ "_id" : ObjectId("657b3f4daa1ca21243fe4ba8"), "eid" : 104, "pid" : 4 }
+{ "_id" : ObjectId("657b3f55aa1ca21243fe4ba9"), "eid" : 105, "pid" : 5 }
+> db.employee.find({employee:"mr.patil"},{pname:"project A",pid:1}).pretty()
+> db.project.find({duration_month:{ $gt:3 }}).pretty()
+{
+	"_id" : ObjectId("657b33eeab17ffde806f8163"),
+	"pid" : 1,
+	"pname" : "project A",
+	"ptype" : "devlopment",
+	"duration_month" : 6
+}
+{
+	"_id" : ObjectId("657b341cab17ffde806f8164"),
+	"pid" : 2,
+	"pname" : "project B",
+	"ptype" : "testing",
+	"duration_month" : 4
+}
+{
+	"_id" : ObjectId("657b368eab17ffde806f8167"),
+	"pid" : 5,
+	"pname" : "project E",
+	"ptype" : "testing",
+	"duration_month" : 5
+}
+{
+	"_id" : ObjectId("657b3e4eaa1ca21243fe4b9d"),
+	"pid" : 1,
+	"pname" : "project A",
+	"ptype" : "devlopment",
+	"duration_month" : 6
+}
+{
+	"_id" : ObjectId("657b3e69aa1ca21243fe4b9e"),
+	"pid" : 2,
+	"pname" : "project B",
+	"ptype" : "testing",
+	"duration_month" : 4
+}
+{
+	"_id" : ObjectId("657b3ebfaa1ca21243fe4ba1"),
+	"pid" : 2,
+	"pname" : "project B",
+	"ptype" : "testing",
+	"duration_month" : 4
+}
+{
+	"_id" : ObjectId("657b3edfaa1ca21243fe4ba4"),
+	"pid" : 5,
+	"pname" : "project E",
+	"ptype" : "testing",
+	"duration_month" : 5
+}
+> db.project.find({ptype:"testing"}).pretty()
+{
+	"_id" : ObjectId("657b341cab17ffde806f8164"),
+	"pid" : 2,
+	"pname" : "project B",
+	"ptype" : "testing",
+	"duration_month" : 4
+}
+{
+	"_id" : ObjectId("657b368eab17ffde806f8167"),
+	"pid" : 5,
+	"pname" : "project E",
+	"ptype" : "testing",
+	"duration_month" : 5
+}
+{
+	"_id" : ObjectId("657b3e69aa1ca21243fe4b9e"),
+	"pid" : 2,
+	"pname" : "project B",
+	"ptype" : "testing",
+	"duration_month" : 4
+}
+{
+	"_id" : ObjectId("657b3ebfaa1ca21243fe4ba1"),
+	"pid" : 2,
+	"pname" : "project B",
+	"ptype" : "testing",
+	"duration_month" : 4
+}
+{
+	"_id" : ObjectId("657b3edfaa1ca21243fe4ba4"),
+	"pid" : 5,
+	"pname" : "project E",
+	"ptype" : "testing",
+	"duration_month" : 5
+}
+> 
+
+
+
