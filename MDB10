@@ -1,0 +1,317 @@
+> use product
+switched to db product
+> db.product.insert({pid:1,pname:laptop,brandname:brandA,wperiod:1,rating:4.5})
+uncaught exception: ReferenceError: laptop is not defined :
+@(shell):1:26
+> use customerloan
+switched to db customerloan
+> db.customer.insert({cid:1,cname:"Mr.patil",address:"123Main st",city:"pimpri"})
+WriteResult({ "nInserted" : 1 })
+> db.customer.insert({cid:2,cname:"Mrs.Deshmuk",address:"456Main st",city:"mumbai"})
+WriteResult({ "nInserted" : 1 })
+> db.customer.insert({cid:3,cname:"Mrs.sharma",address:"786Maple st",city:"pimpri"})
+WriteResult({ "nInserted" : 1 })
+> use product
+switched to db product
+> db.product.insert({pid:1,pname:"laptop",brandname:"brandA",wperiod:1,rating:4.5})
+WriteResult({ "nInserted" : 1 })
+> db.product.insert({pid:2,pname:"smartphone",brandname:"brandB",wperiod:2,rating:3.8})
+WriteResult({ "nInserted" : 1 })
+> db.product.insert({pid:3,pname:"headphone",brandname:"brandC",wperiod:1,rating:4.0})
+WriteResult({ "nInserted" : 1 })
+> db.product.insert({pid:4,pname:"Tv",brandname:"brandA",wperiod:2,rating:5})
+WriteResult({ "nInserted" : 1 })
+> db.product.insert({pid:5,pname:"refrigeretor",brandname:"brandB",wperiod:1,rating:6})
+WriteResult({ "nInserted" : 1 })
+> db.product.find({}).pretty()
+{
+	"_id" : ObjectId("65775b677795f9eda9feb80e"),
+	"pid" : 1,
+	"pname" : "laptop",
+	"brandname" : "brandA",
+	"wperiod" : 1,
+	"rating" : 4.5
+}
+{
+	"_id" : ObjectId("65775ba37795f9eda9feb80f"),
+	"pid" : 2,
+	"pname" : "smartphone",
+	"brandname" : "brandB",
+	"wperiod" : 2,
+	"rating" : 3.8
+}
+{
+	"_id" : ObjectId("65775bd87795f9eda9feb810"),
+	"pid" : 3,
+	"pname" : "headphone",
+	"brandname" : "brandC",
+	"wperiod" : 1,
+	"rating" : 4
+}
+{
+	"_id" : ObjectId("65775c237795f9eda9feb811"),
+	"pid" : 4,
+	"pname" : "Tv",
+	"brandname" : "brandA",
+	"wperiod" : 2,
+	"rating" : 5
+}
+{
+	"_id" : ObjectId("65775c517795f9eda9feb812"),
+	"pid" : 5,
+	"pname" : "refrigeretor",
+	"brandname" : "brandB",
+	"wperiod" : 1,
+	"rating" : 6
+}
+> db.customer.insert({cid:101,cname:"abc",city:"new york"})
+WriteResult({ "nInserted" : 1 })
+> db.customer.insert({cid:102,cname:"xyz",city:"los angeles"})
+WriteResult({ "nInserted" : 1 })
+> db.customer.insert({cid:103,cname:"poq",city:"chicago"})
+WriteResult({ "nInserted" : 1 })
+> db.customer.insert({cid:104,cname:"kji",city:"houston"})
+WriteResult({ "nInserted" : 1 })
+> db.customer.insert({cid:105,cname:"uvw",city:"miami"})
+WriteResult({ "nInserted" : 1 })
+> db.customer.find({}).pretty()
+{
+	"_id" : ObjectId("65775cdc7795f9eda9feb813"),
+	"cid" : 101,
+	"cname" : "abc",
+	"city" : "new york"
+}
+{
+	"_id" : ObjectId("65775cfa7795f9eda9feb814"),
+	"cid" : 102,
+	"cname" : "xyz",
+	"city" : "los angeles"
+}
+{
+	"_id" : ObjectId("65775d117795f9eda9feb815"),
+	"cid" : 103,
+	"cname" : "poq",
+	"city" : "chicago"
+}
+{
+	"_id" : ObjectId("65775d287795f9eda9feb816"),
+	"cid" : 104,
+	"cname" : "kji",
+	"city" : "houston"
+}
+{
+	"_id" : ObjectId("65775d437795f9eda9feb817"),
+	"cid" : 105,
+	"cname" : "uvw",
+	"city" : "miami"
+}
+> db.purchase.insert({pid:1001,cid:101,pid:1,purchasedate:"2023-08-15,billamt:1200)}
+uncaught exception: SyntaxError: "" literal not terminated before end of script :
+@(shell):1:82
+> db.purchase.insert({pid:1001,cid:101,pid:1,purchasedate:2023-08-15,billamt:1200)}
+uncaught exception: SyntaxError: missing } after property list :
+@(shell):1:79
+> db.purchase.insert({pid:1001,cid:101,pid:1,purchasedate:2023-08-15,billamt:1200})
+WriteResult({ "nInserted" : 1 })
+> db.purchase.insert({pid:1002,cid:102,pid:3,purchasedate:2023-08-15,billamt:80})
+WriteResult({ "nInserted" : 1 })
+> db.purchase.insert({pid:1003,cid:103,pid:2,purchasedate:2023-08-15,billamt:500})
+WriteResult({ "nInserted" : 1 })
+> db.purchase.insert({pid:1004,cid:104,pid:5,purchasedate:2023-08-15,billamt:1000})
+WriteResult({ "nInserted" : 1 })
+> db.purchase.insert({pid:1005,cid:105,pid:4,purchasedate:2023-08-15,billamt:800})
+WriteResult({ "nInserted" : 1 })
+> db.purchase.find({}).pretty()
+{
+	"_id" : ObjectId("65775e2f7795f9eda9feb818"),
+	"pid" : 1,
+	"cid" : 101,
+	"purchasedate" : 2000,
+	"billamt" : 1200
+}
+{
+	"_id" : ObjectId("65775e557795f9eda9feb819"),
+	"pid" : 3,
+	"cid" : 102,
+	"purchasedate" : 2000,
+	"billamt" : 80
+}
+{
+	"_id" : ObjectId("65775e717795f9eda9feb81a"),
+	"pid" : 2,
+	"cid" : 103,
+	"purchasedate" : 2000,
+	"billamt" : 500
+}
+{
+	"_id" : ObjectId("65775e947795f9eda9feb81b"),
+	"pid" : 5,
+	"cid" : 104,
+	"purchasedate" : 2000,
+	"billamt" : 1000
+}
+{
+	"_id" : ObjectId("65775ecf7795f9eda9feb81c"),
+	"pid" : 4,
+	"cid" : 105,
+	"purchasedate" : 2000,
+	"billamt" : 800
+}
+> db.product.find({wperiod:1})
+{ "_id" : ObjectId("65775b677795f9eda9feb80e"), "pid" : 1, "pname" : "laptop", "brandname" : "brandA", "wperiod" : 1, "rating" : 4.5 }
+{ "_id" : ObjectId("65775bd87795f9eda9feb810"), "pid" : 3, "pname" : "headphone", "brandname" : "brandC", "wperiod" : 1, "rating" : 4 }
+{ "_id" : ObjectId("65775c517795f9eda9feb812"), "pid" : 5, "pname" : "refrigeretor", "brandname" : "brandB", "wperiod" : 1, "rating" : 6 }
+> db.product.find({wperiod:1}).pretty()
+{
+	"_id" : ObjectId("65775b677795f9eda9feb80e"),
+	"pid" : 1,
+	"pname" : "laptop",
+	"brandname" : "brandA",
+	"wperiod" : 1,
+	"rating" : 4.5
+}
+{
+	"_id" : ObjectId("65775bd87795f9eda9feb810"),
+	"pid" : 3,
+	"pname" : "headphone",
+	"brandname" : "brandC",
+	"wperiod" : 1,
+	"rating" : 4
+}
+{
+	"_id" : ObjectId("65775c517795f9eda9feb812"),
+	"pid" : 5,
+	"pname" : "refrigeretor",
+	"brandname" : "brandB",
+	"wperiod" : 1,
+	"rating" : 6
+}
+> db.customer.find({purchasedate:23-08-15}).pretty()
+> db.customer.find({purchasedate:23-08-15}).pretty()
+> db.customer.find({purchasedate:2023-08-15}).pretty()
+> db.purchase.insert({pid:1001,cid:101,pid:1,purchasedate:"2023-08-15",billamt:1200})
+WriteResult({ "nInserted" : 1 })
+> db.purchase.insert({pid:1002,cid:102,pid:3,purchasedate:"2023-08-15",billamt:80})
+WriteResult({ "nInserted" : 1 })
+> db.purchase.insert({pid:1003,cid:103,pid:2,purchasedate:"2023-08-15",billamt:500})
+WriteResult({ "nInserted" : 1 })
+> db.purchase.insert({pid:1004,cid:104,pid:5,purchasedate:"2023-08-15",billamt:1000})
+WriteResult({ "nInserted" : 1 })
+> db.purchase.insert({pid:1005,cid:105,pid:4,purchasedate:"2023-08-15",billamt:800})
+WriteResult({ "nInserted" : 1 })
+> db.purchase.find({}).pretty()
+{
+	"_id" : ObjectId("65775e2f7795f9eda9feb818"),
+	"pid" : 1,
+	"cid" : 101,
+	"purchasedate" : 2000,
+	"billamt" : 1200
+}
+{
+	"_id" : ObjectId("65775e557795f9eda9feb819"),
+	"pid" : 3,
+	"cid" : 102,
+	"purchasedate" : 2000,
+	"billamt" : 80
+}
+{
+	"_id" : ObjectId("65775e717795f9eda9feb81a"),
+	"pid" : 2,
+	"cid" : 103,
+	"purchasedate" : 2000,
+	"billamt" : 500
+}
+{
+	"_id" : ObjectId("65775e947795f9eda9feb81b"),
+	"pid" : 5,
+	"cid" : 104,
+	"purchasedate" : 2000,
+	"billamt" : 1000
+}
+{
+	"_id" : ObjectId("65775ecf7795f9eda9feb81c"),
+	"pid" : 4,
+	"cid" : 105,
+	"purchasedate" : 2000,
+	"billamt" : 800
+}
+{
+	"_id" : ObjectId("657760fe7795f9eda9feb81d"),
+	"pid" : 1,
+	"cid" : 101,
+	"purchasedate" : "2023-08-15",
+	"billamt" : 1200
+}
+{
+	"_id" : ObjectId("6577610e7795f9eda9feb81e"),
+	"pid" : 3,
+	"cid" : 102,
+	"purchasedate" : "2023-08-15",
+	"billamt" : 80
+}
+{
+	"_id" : ObjectId("657761267795f9eda9feb81f"),
+	"pid" : 2,
+	"cid" : 103,
+	"purchasedate" : "2023-08-15",
+	"billamt" : 500
+}
+{
+	"_id" : ObjectId("6577613c7795f9eda9feb820"),
+	"pid" : 5,
+	"cid" : 104,
+	"purchasedate" : "2023-08-15",
+	"billamt" : 1000
+}
+{
+	"_id" : ObjectId("6577614f7795f9eda9feb821"),
+	"pid" : 4,
+	"cid" : 105,
+	"purchasedate" : "2023-08-15",
+	"billamt" : 800
+}
+> db.customer.find({purchasedate:2023-08-15}).pretty()
+> db.customer.find({purchasedate:"2023-08-15"}).pretty()
+> db.customer.find({purchasedate:"2023-08-15"})
+> db.purchase.find({purchasedate:"2023-08-15"})
+{ "_id" : ObjectId("657760fe7795f9eda9feb81d"), "pid" : 1, "cid" : 101, "purchasedate" : "2023-08-15", "billamt" : 1200 }
+{ "_id" : ObjectId("6577610e7795f9eda9feb81e"), "pid" : 3, "cid" : 102, "purchasedate" : "2023-08-15", "billamt" : 80 }
+{ "_id" : ObjectId("657761267795f9eda9feb81f"), "pid" : 2, "cid" : 103, "purchasedate" : "2023-08-15", "billamt" : 500 }
+{ "_id" : ObjectId("6577613c7795f9eda9feb820"), "pid" : 5, "cid" : 104, "purchasedate" : "2023-08-15", "billamt" : 1000 }
+{ "_id" : ObjectId("6577614f7795f9eda9feb821"), "pid" : 4, "cid" : 105, "purchasedate" : "2023-08-15", "billamt" : 800 }
+> db.purchase.find({purchasedate:"2023-08-15"}).pretty()
+{
+	"_id" : ObjectId("657760fe7795f9eda9feb81d"),
+	"pid" : 1,
+	"cid" : 101,
+	"purchasedate" : "2023-08-15",
+	"billamt" : 1200
+}
+{
+	"_id" : ObjectId("6577610e7795f9eda9feb81e"),
+	"pid" : 3,
+	"cid" : 102,
+	"purchasedate" : "2023-08-15",
+	"billamt" : 80
+}
+{
+	"_id" : ObjectId("657761267795f9eda9feb81f"),
+	"pid" : 2,
+	"cid" : 103,
+	"purchasedate" : "2023-08-15",
+	"billamt" : 500
+}
+{
+	"_id" : ObjectId("6577613c7795f9eda9feb820"),
+	"pid" : 5,
+	"cid" : 104,
+	"purchasedate" : "2023-08-15",
+	"billamt" : 1000
+}
+{
+	"_id" : ObjectId("6577614f7795f9eda9feb821"),
+	"pid" : 4,
+	"cid" : 105,
+	"purchasedate" : "2023-08-15",
+	"billamt" : 800
+}
