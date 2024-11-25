@@ -1,0 +1,113 @@
+use customerpolicy
+switched to db customerpolicy
+> db.customer.insert({cid:1,cname:"Johndoe",pname:"Komaljeevan"})
+WriteResult({ "nInserted" : 1 })
+> db.customer.insert({cid:2,cname:"Janesmith",pname:"Komaljeevan"})
+WriteResult({ "nInserted" : 1 })
+> db.customer.insert({cid:3,cname:"Janesmith",pname:"Terminsurance"})
+WriteResult({ "nInserted" : 1 })
+> db.customer.insert({cid:4,cname:"Bobjohnson",pname:"monthly"})
+WriteResult({ "nInserted" : 1 })
+> db.customer.insert({cid:5,cname:"Alicebrown",pname:"Quaterly"})
+WriteResult({ "nInserted" : 1 })
+> db.customer.insert({cid:6,cname:"Charliegreen",pname:"Halfyearly"})
+WriteResult({ "nInserted" : 1 })
+> db.customer.find({}).pretty()
+{
+	"_id" : ObjectId("657957d4e8c81c4ffe4e457d"),
+	"cid" : 1,
+	"cname" : "Johndoe",
+	"pname" : "Komaljeevan"
+}
+{
+	"_id" : ObjectId("657957ede8c81c4ffe4e457e"),
+	"cid" : 2,
+	"cname" : "Janesmith",
+	"pname" : "Komaljeevan"
+}
+{
+	"_id" : ObjectId("6579580fe8c81c4ffe4e457f"),
+	"cid" : 3,
+	"cname" : "Janesmith",
+	"pname" : "Terminsurance"
+}
+{
+	"_id" : ObjectId("65795838e8c81c4ffe4e4580"),
+	"cid" : 4,
+	"cname" : "Bobjohnson",
+	"pname" : "monthly"
+}
+{
+	"_id" : ObjectId("6579585ee8c81c4ffe4e4581"),
+	"cid" : 5,
+	"cname" : "Alicebrown",
+	"pname" : "Quaterly"
+}
+{
+	"_id" : ObjectId("6579589fe8c81c4ffe4e4582"),
+	"cid" : 6,
+	"cname" : "Charliegreen",
+	"pname" : "Halfyearly"
+}
+> db.policy.insert({pid:101,pname:"Komaljeevan",pamount:5000})
+WriteResult({ "nInserted" : 1 })
+> db.policy.insert({pid:102,pname:"Terminsurance",pamount:3000})
+WriteResult({ "nInserted" : 1 })
+> db.policy.insert({pid:103,pname:"Monthly",pamount:100})
+WriteResult({ "nInserted" : 1 })
+> db.policy.insert({pid:104,pname:"Quaterly",pamount:250})
+WriteResult({ "nInserted" : 1 })
+> db.policy.insert({pid:105,pname:"Halfyearly",pamount:500})
+WriteResult({ "nInserted" : 1 })
+> db.policy.find({}).pretty()
+{
+	"_id" : ObjectId("657958ffe8c81c4ffe4e4583"),
+	"pid" : 101,
+	"pname" : "Komaljeevan",
+	"pamount" : 5000
+}
+{
+	"_id" : ObjectId("6579591be8c81c4ffe4e4584"),
+	"pid" : 102,
+	"pname" : "Terminsurance",
+	"pamount" : 3000
+}
+{
+	"_id" : ObjectId("65795932e8c81c4ffe4e4585"),
+	"pid" : 103,
+	"pname" : "Monthly",
+	"pamount" : 100
+}
+{
+	"_id" : ObjectId("65795953e8c81c4ffe4e4586"),
+	"pid" : 104,
+	"pname" : "Quaterly",
+	"pamount" : 250
+}
+{
+	"_id" : ObjectId("6579596ce8c81c4ffe4e4587"),
+	"pid" : 105,
+	"pname" : "Halfyearly",
+	"pamount" : 500
+}
+> db.customer.find({pname:"Komaljeevan"}).pretty()
+{
+	"_id" : ObjectId("657957d4e8c81c4ffe4e457d"),
+	"cid" : 1,
+	"cname" : "Johndoe",
+	"pname" : "Komaljeevan"
+}
+{
+	"_id" : ObjectId("657957ede8c81c4ffe4e457e"),
+	"cid" : 2,
+	"cname" : "Janesmith",
+	"pname" : "Komaljeevan"
+}
+> db.customer.find({pname:"Halfearly"}).pretty()
+> db.customer.find({pname:"Halfyearly"}).pretty()
+{
+	"_id" : ObjectId("6579589fe8c81c4ffe4e4582"),
+	"cid" : 6,
+	"cname" : "Charliegreen",
+	"pname" : "Halfyearly"
+}
