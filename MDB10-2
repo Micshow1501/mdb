@@ -1,0 +1,195 @@
+use purchaseproduct
+switched to db purchaseproduct
+> db.customer.insert({cid:1'cname:Johndoe,city:"Newyork",pdate:'2023-08-15',amount:1200})
+uncaught exception: SyntaxError: missing } after property list :
+@(shell):1:25
+> db.customer.insert({cid:1,cname:Johndoe,city:"Newyork",pdate:'2023-08-15',amount:1200})
+uncaught exception: ReferenceError: Johndoe is not defined :
+@(shell):1:27
+> db.customer.insert({cid:1,cname:"Johndoe",city:"Newyork",pdate:'2023-08-15',amount:1200})
+WriteResult({ "nInserted" : 1 })
+> db.customer.insert({cid:2,cname:"Janesmith",city:"Losangeles",pdate:'2023-08-15',amount:80})
+WriteResult({ "nInserted" : 1 })
+> db.customer.insert({cid:3,cname:"Bobjohnson",city:"Chicago",pdate:'2023-08-15',amount:500})
+WriteResult({ "nInserted" : 1 })
+> db.customer.insert({cid:4,cname:"Alicebrown",city:"Chicago",pdate:'2023-08-15',amount:500})
+WriteResult({ "nInserted" : 1 })
+> db.customer.insert({cid:5,cname:"Charliegreen",city:"Houston",pdate:'2023-08-15',amount:1000})
+WriteResult({ "nInserted" : 1 })
+> db.customer.find({}).pretty()
+{
+	"_id" : ObjectId("65797f3426d96f3e6a852707"),
+	"cid" : 1,
+	"cname" : "Johndoe",
+	"city" : "Newyork",
+	"pdate" : "2023-08-15",
+	"amount" : 1200
+}
+{
+	"_id" : ObjectId("65797f7826d96f3e6a852708"),
+	"cid" : 2,
+	"cname" : "Janesmith",
+	"city" : "Losangeles",
+	"pdate" : "2023-08-15",
+	"amount" : 80
+}
+{
+	"_id" : ObjectId("65797fa926d96f3e6a852709"),
+	"cid" : 3,
+	"cname" : "Bobjohnson",
+	"city" : "Chicago",
+	"pdate" : "2023-08-15",
+	"amount" : 500
+}
+{
+	"_id" : ObjectId("65797fea26d96f3e6a85270a"),
+	"cid" : 4,
+	"cname" : "Alicebrown",
+	"city" : "Chicago",
+	"pdate" : "2023-08-15",
+	"amount" : 500
+}
+{
+	"_id" : ObjectId("6579808726d96f3e6a85270b"),
+	"cid" : 5,
+	"cname" : "Charliegreen",
+	"city" : "Houston",
+	"pdate" : "2023-08-15",
+	"amount" : 1000
+}
+> db.product.insert({pid:101,pname:"Laptop",bname:"BrandA",wperiod:1,rating:4.5})
+WriteResult({ "nInserted" : 1 })
+> db.product.insert({pid:102,pname:"Smartphone",bname:"BrandB",wperiod:2,rating:3.8})
+WriteResult({ "nInserted" : 1 })
+> db.product.insert({pid:103,pname:"Headphones",bname:"BrandC",wperiod:1,rating:4})
+WriteResult({ "nInserted" : 1 })
+> db.product.insert({pid:104,pname:"TV",bname:"BrandA",wperiod:2,rating:4.2})
+WriteResult({ "nInserted" : 1 })
+> db.product.insert({pid:105,pname:"Refrigerator",bname:"BrandB",wperiod:1,rating:4.8})
+WriteResult({ "nInserted" : 1 })
+> db.product.find({}).pretty()
+{
+	"_id" : ObjectId("6579813d26d96f3e6a85270c"),
+	"pid" : 101,
+	"pname" : "Laptop",
+	"bname" : "BrandA",
+	"wperiod" : 1,
+	"rating" : 4.5
+}
+{
+	"_id" : ObjectId("6579816526d96f3e6a85270d"),
+	"pid" : 102,
+	"pname" : "Smartphone",
+	"bname" : "BrandB",
+	"wperiod" : 2,
+	"rating" : 3.8
+}
+{
+	"_id" : ObjectId("6579818c26d96f3e6a85270e"),
+	"pid" : 103,
+	"pname" : "Headphones",
+	"bname" : "BrandC",
+	"wperiod" : 1,
+	"rating" : 4
+}
+{
+	"_id" : ObjectId("657981ac26d96f3e6a85270f"),
+	"pid" : 104,
+	"pname" : "TV",
+	"bname" : "BrandA",
+	"wperiod" : 2,
+	"rating" : 4.2
+}
+{
+	"_id" : ObjectId("657981f126d96f3e6a852710"),
+	"pid" : 105,
+	"pname" : "Refrigerator",
+	"bname" : "BrandB",
+	"wperiod" : 1,
+	"rating" : 4.8
+}
+> db.product.find({wperiod:1}).pretty()
+{
+	"_id" : ObjectId("6579813d26d96f3e6a85270c"),
+	"pid" : 101,
+	"pname" : "Laptop",
+	"bname" : "BrandA",
+	"wperiod" : 1,
+	"rating" : 4.5
+}
+{
+	"_id" : ObjectId("6579818c26d96f3e6a85270e"),
+	"pid" : 103,
+	"pname" : "Headphones",
+	"bname" : "BrandC",
+	"wperiod" : 1,
+	"rating" : 4
+}
+{
+	"_id" : ObjectId("657981f126d96f3e6a852710"),
+	"pid" : 105,
+	"pname" : "Refrigerator",
+	"bname" : "BrandB",
+	"wperiod" : 1,
+	"rating" : 4.8
+}
+> db.customer.find({pdate:"2023-08-15"}).pretty()
+{
+	"_id" : ObjectId("65797f3426d96f3e6a852707"),
+	"cid" : 1,
+	"cname" : "Johndoe",
+	"city" : "Newyork",
+	"pdate" : "2023-08-15",
+	"amount" : 1200
+}
+{
+	"_id" : ObjectId("65797f7826d96f3e6a852708"),
+	"cid" : 2,
+	"cname" : "Janesmith",
+	"city" : "Losangeles",
+	"pdate" : "2023-08-15",
+	"amount" : 80
+}
+{
+	"_id" : ObjectId("65797fa926d96f3e6a852709"),
+	"cid" : 3,
+	"cname" : "Bobjohnson",
+	"city" : "Chicago",
+	"pdate" : "2023-08-15",
+	"amount" : 500
+}
+{
+	"_id" : ObjectId("65797fea26d96f3e6a85270a"),
+	"cid" : 4,
+	"cname" : "Alicebrown",
+	"city" : "Chicago",
+	"pdate" : "2023-08-15",
+	"amount" : 500
+}
+{
+	"_id" : ObjectId("6579808726d96f3e6a85270b"),
+	"cid" : 5,
+	"cname" : "Charliegreen",
+	"city" : "Houston",
+	"pdate" : "2023-08-15",
+	"amount" : 1000
+}
+> db.product.find().sort({rating:-1}).limit(1).pretty()
+{
+	"_id" : ObjectId("657981f126d96f3e6a852710"),
+	"pid" : 105,
+	"pname" : "Refrigerator",
+	"bname" : "BrandB",
+	"wperiod" : 1,
+	"rating" : 4.8
+}
+> db.customer.find({city:"Newyork"}).pretty()
+{
+	"_id" : ObjectId("65797f3426d96f3e6a852707"),
+	"cid" : 1,
+	"cname" : "Johndoe",
+	"city" : "Newyork",
+	"pdate" : "2023-08-15",
+	"amount" : 1200
+}
+
