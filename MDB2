@@ -1,0 +1,141 @@
+use newspaper
+switched to db newspaper
+> db.publisher.insert({pno:1,pname:"ABC",state:"Gujrat",city:"Surat"})
+WriteResult({ "nInserted" : 1 })
+> db.publisher.insert({pno:2,pname:"Nirali",state:"Maharastra",city:"Nashik"})
+WriteResult({ "nInserted" : 1 })
+> db.publisher.insert({pno:3,pname:"Vision",state:"Maharastra",city:"Pune"})
+WriteResult({ "nInserted" : 1 })
+> db.publisher.insert({pno:4,pname:"Balbharti",state:"Maharastra",city:"Mumbai"})
+WriteResult({ "nInserted" : 1 })
+> db.publisher.insert({pno:5,pname:"XYZ",state:"Gujrat",city:"Ahmedabad"})
+WriteResult({ "nInserted" : 1 })
+> db.publisher.find({}).pretty()
+{
+	"_id" : ObjectId("6576cac9ec36bf34e86dd9b2"),
+	"pno" : 1,
+	"pname" : "ABC",
+	"state" : "Gujrat",
+	"city" : "Surat"
+}
+{
+	"_id" : ObjectId("6576caf6ec36bf34e86dd9b3"),
+	"pno" : 2,
+	"pname" : "Nirali",
+	"state" : "Maharastra",
+	"city" : "Nashik"
+}
+{
+	"_id" : ObjectId("6576cb0fec36bf34e86dd9b4"),
+	"pno" : 3,
+	"pname" : "Vision",
+	"state" : "Maharastra",
+	"city" : "Pune"
+}
+{
+	"_id" : ObjectId("6576cb2dec36bf34e86dd9b5"),
+	"pno" : 4,
+	"pname" : "Balbharti",
+	"state" : "Maharastra",
+	"city" : "Mumbai"
+}
+{
+	"_id" : ObjectId("6576cb6aec36bf34e86dd9b6"),
+	"pno" : 5,
+	"pname" : "XYZ",
+	"state" : "Gujrat",
+	"city" : "Ahmedabad"
+}
+> db.newspaper.insert({nid:1,nname:"Marathitimes",lang:"Marathi",sale:50000})
+WriteResult({ "nInserted" : 1 })
+> db.newspaper.insert({nid:1,nname:"GujaratNews",lang:"Gujrati",sale:45000})
+WriteResult({ "nInserted" : 1 })
+> db.newspaper.insert({nid:1,nname:"Mumbaiherald",lang:"Marathi",sale:10000})
+WriteResult({ "nInserted" : 1 })
+> db.newspaper.insert({nid:2,nname:"Puneexpress",lang:"Marathi",sale:60000})
+WriteResult({ "nInserted" : 1 })
+> db.newspaper.insert({nid:2,nname:"Surattribune",lang:"English",sale:48000})
+WriteResult({ "nInserted" : 1 })
+> db.newspaper.find({}).pretty()
+{
+	"_id" : ObjectId("6576cd1dec36bf34e86dd9b7"),
+	"nid" : 1,
+	"nname" : "Marathitimes",
+	"lang" : "Marathi",
+	"sale" : 50000
+}
+{
+	"_id" : ObjectId("6576cddbec36bf34e86dd9b8"),
+	"nid" : 1,
+	"nname" : "GujaratNews",
+	"lang" : "Gujrati",
+	"sale" : 45000
+}
+{
+	"_id" : ObjectId("6576d2d0ec36bf34e86dd9b9"),
+	"nid" : 1,
+	"nname" : "Mumbaiherald",
+	"lang" : "Marathi",
+	"sale" : 10000
+}
+{
+	"_id" : ObjectId("6576d2ffec36bf34e86dd9ba"),
+	"nid" : 2,
+	"nname" : "Puneexpress",
+	"lang" : "Marathi",
+	"sale" : 60000
+}
+{
+	"_id" : ObjectId("6576d338ec36bf34e86dd9bb"),
+	"nid" : 2,
+	"nname" : "Surattribune",
+	"lang" : "English",
+	"sale" : 48000
+}
+> db.newspaper.find({city:"Nashik"}).pretty()
+> db.publisher.find({city:"Nashik"}).pretty()
+{
+	"_id" : ObjectId("6576caf6ec36bf34e86dd9b3"),
+	"pno" : 2,
+	"pname" : "Nirali",
+	"state" : "Maharastra",
+	"city" : "Nashik"
+}
+> db.newspaper.find({lang:"Marathi"}).pretty()
+{
+	"_id" : ObjectId("6576cd1dec36bf34e86dd9b7"),
+	"nid" : 1,
+	"nname" : "Marathitimes",
+	"lang" : "Marathi",
+	"sale" : 50000
+}
+{
+	"_id" : ObjectId("6576d2d0ec36bf34e86dd9b9"),
+	"nid" : 1,
+	"nname" : "Mumbaiherald",
+	"lang" : "Marathi",
+	"sale" : 10000
+}
+{
+	"_id" : ObjectId("6576d2ffec36bf34e86dd9ba"),
+	"nid" : 2,
+	"nname" : "Puneexpress",
+	"lang" : "Marathi",
+	"sale" : 60000
+}
+
+> db.publisher.find({state:"Gujrat"}).pretty()
+{
+	"_id" : ObjectId("6576cac9ec36bf34e86dd9b2"),
+	"pno" : 1,
+	"pname" : "ABC",
+	"state" : "Gujrat",
+	"city" : "Surat"
+}
+{
+	"_id" : ObjectId("6576cb6aec36bf34e86dd9b6"),
+	"pno" : 5,
+	"pname" : "XYZ",
+	"state" : "Gujrat",
+	"city" : "Ahmedabad"
+}
