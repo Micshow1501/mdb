@@ -1,0 +1,79 @@
+use department
+switched to db department
+> db.department.insert({deptid:1,deptname:"Sales"})
+WriteResult({ "nInserted" : 1 })
+> db.department.insert({deptid:2,deptname:"Hr"})
+WriteResult({ "nInserted" : 1 })
+> db.department.insert({deptid:3,deptname:"IT"})
+WriteResult({ "nInserted" : 1 })
+
+> db.department.find({}).pretty()
+{
+	"_id" : ObjectId("6576d6dbae5a4febbd618e11"),
+	"deptid" : 1,
+	"deptname" : "Sales"
+}
+{
+	"_id" : ObjectId("6576d6e0ae5a4febbd618e12"),
+	"deptid" : 2,
+	"deptname" : "Hr"
+}
+{
+	"_id" : ObjectId("6576d6e4ae5a4febbd618e13"),
+	"deptid" : 3,
+	"deptname" : "IT"
+}
+> db.employee.insert({eid:1,ename:"ABC",salary:60000,depatname:"Sales"})
+WriteResult({ "nInserted" : 1 })
+> db.employee.insert({eid:1,ename:"XYZ",salary:70000,depatname:"Hr"})
+WriteResult({ "nInserted" : 1 })
+> db.employee.insert({eid:2,ename:"PQR",salary:75000,depatname:"IT"})
+WriteResult({ "nInserted" : 1 })
+> db.employee.insert({eid:3,ename:"NPR",salary:50000,depatname:"IT"})
+WriteResult({ "nInserted" : 1 })
+> db.employee.insert({eid:4,ename:"GHI",salary:65000,depatname:"Sales"})
+WriteResult({ "nInserted" : 1 })
+> db.employee.find({}).pretty()
+{
+	"_id" : ObjectId("6576d7c5ae5a4febbd618e14"),
+	"eid" : 1,
+	"ename" : "ABC",
+	"salary" : 60000,
+	"depatname" : "Sales"
+}
+{
+	"_id" : ObjectId("6576d7e2ae5a4febbd618e15"),
+	"eid" : 1,
+	"ename" : "XYZ",
+	"salary" : 70000,
+	"depatname" : "Hr"
+}
+{
+	"_id" : ObjectId("6576d802ae5a4febbd618e16"),
+	"eid" : 2,
+	"ename" : "PQR",
+	"salary" : 75000,
+	"depatname" : "IT"
+}
+{
+	"_id" : ObjectId("6576d81fae5a4febbd618e17"),
+	"eid" : 3,
+	"ename" : "NPR",
+	"salary" : 50000,
+	"depatname" : "IT"
+}
+{
+	"_id" : ObjectId("6576d845ae5a4febbd618e18"),
+	"eid" : 4,
+	"ename" : "GHI",
+	"salary" : 65000,
+	"depatname" : "Sales"
+}
+> db.employee.find({}).sort({"salary":-1}).limit(1).pretty()
+{
+	"_id" : ObjectId("6576d802ae5a4febbd618e16"),
+	"eid" : 2,
+	"ename" : "PQR",
+	"salary" : 75000,
+	"depatname" : "IT"
+}
