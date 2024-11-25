@@ -1,0 +1,348 @@
+> use hospital
+switched to db hospital
+> db.hospital.insert({hname:"cityhospital",city:"Nashik",specialization:"Pediatric",dname:"Dr.deshmukh",rating:4.5})
+WriteResult({ "nInserted" : 1 })
+> db.hospital.insert({hname:"Pediatriccare",city:"Nashik",specialization:"Pediatric",dname:"Dr.patel",rating:3.8})
+WriteResult({ "nInserted" : 1 })
+> db.hospital.insert({hname:"Orthoclinic",city:"Mumbai",specialization:"Gynaecology",dname:"Dr.Singh",rating:4.2})
+WriteResult({ "nInserted" : 1 })
+> db.hospital.insert({hname:"Gynaecologycenter",city:"Nashik",specialization:"Gynaecology",dname:"Dr.Sharma",rating:4.9})
+WriteResult({ "nInserted" : 1 })
+> db.hospital.insert({hname:"Speciaalityhospital",city:"Pune",specialization:"Orthopedic",dname:"Dr.Gupta",rating:3.5})
+WriteResult({ "nInserted" : 1 })
+> db.hospital.insert({hname:"generalhospital",city:"Nashik",specialization:"General",dname:"Dr.deshmukh",rating:4.7})
+WriteResult({ "nInserted" : 1 })
+> db.hospital.insert({hname:"ortho&more",city:"Nashik",specialization:"General",dname:"Dr.Sharma",rating:3.0})
+WriteResult({ "nInserted" : 1 })
+> db.hospital.insert({hname:"Metrohospital",city:"Mumbai",specialization:"Pediatric",dname:"Dr.Gupta",rating:4.1})
+WriteResult({ "nInserted" : 1 })
+> db.hospital.insert({hname:"Womenshealthcare",city:"Nashik",specialization:"Orthopedic",dname:"Dr.Singh",rating:8.2})
+WriteResult({ "nInserted" : 1 })
+> db.hospital.insert({hname:"Childwellnessclinic",city:"Pune",specialization:"General",dname:"Dr.Patel",rating:5.3})
+WriteResult({ "nInserted" : 1 })
+> db.hospital.find({}).pretty()
+{
+	"_id" : ObjectId("657abdb6e7efdf50d9a6198e"),
+	"hname" : "cityhospital",
+	"city" : "Nashik",
+	"specialization" : "Pediatric",
+	"dname" : "Dr.deshmukh",
+	"rating" : 4.5
+}
+{
+	"_id" : ObjectId("657abdffe7efdf50d9a6198f"),
+	"hname" : "Pediatriccare",
+	"city" : "Nashik",
+	"specialization" : "Pediatric",
+	"dname" : "Dr.patel",
+	"rating" : 3.8
+}
+{
+	"_id" : ObjectId("657abe4de7efdf50d9a61990"),
+	"hname" : "Orthoclinic",
+	"city" : "Mumbai",
+	"specialization" : "Gynaecology",
+	"dname" : "Dr.Singh",
+	"rating" : 4.2
+}
+{
+	"_id" : ObjectId("657abe8fe7efdf50d9a61991"),
+	"hname" : "Gynaecologycenter",
+	"city" : "Nashik",
+	"specialization" : "Gynaecology",
+	"dname" : "Dr.Sharma",
+	"rating" : 4.9
+}
+{
+	"_id" : ObjectId("657abf26e7efdf50d9a61992"),
+	"hname" : "Speciaalityhospital",
+	"city" : "Pune",
+	"specialization" : "Orthopedic",
+	"dname" : "Dr.Gupta",
+	"rating" : 3.5
+}
+{
+	"_id" : ObjectId("657ac09de7efdf50d9a61993"),
+	"hname" : "generalhospital",
+	"city" : "Nashik",
+	"specialization" : "General",
+	"dname" : "Dr.deshmukh",
+	"rating" : 4.7
+}
+{
+	"_id" : ObjectId("657ac0d2e7efdf50d9a61994"),
+	"hname" : "ortho&more",
+	"city" : "Nashik",
+	"specialization" : "General",
+	"dname" : "Dr.Sharma",
+	"rating" : 3
+}
+{
+	"_id" : ObjectId("657ac112e7efdf50d9a61995"),
+	"hname" : "Metrohospital",
+	"city" : "Mumbai",
+	"specialization" : "Pediatric",
+	"dname" : "Dr.Gupta",
+	"rating" : 4.1
+}
+{
+	"_id" : ObjectId("657ac14ce7efdf50d9a61996"),
+	"hname" : "Womenshealthcare",
+	"city" : "Nashik",
+	"specialization" : "Orthopedic",
+	"dname" : "Dr.Singh",
+	"rating" : 8.2
+}
+{
+	"_id" : ObjectId("657ac198e7efdf50d9a61997"),
+	"hname" : "Childwellnessclinic",
+	"city" : "Pune",
+	"specialization" : "General",
+	"dname" : "Dr.Patel",
+	"rating" : 5.3
+}
+> db.review.insert({rid:1,hid:1,rname:"Patient1"})
+WriteResult({ "nInserted" : 1 })
+> db.review.insert({rid:2,hid:2,rname:"Patient2"})
+WriteResult({ "nInserted" : 1 })
+> db.review.insert({rid:3,hid:3,rname:"Patient3"})
+WriteResult({ "nInserted" : 1 })
+> db.review.insert({rid:3,hid:3,rname:"Patient3"})
+WriteResult({ "nInserted" : 1 })
+> db.review.insert({rid:4,hid:4,rname:"Patient4"})
+WriteResult({ "nInserted" : 1 })
+> db.review.insert({rid:5,hid:5,rname:"Patient5"})
+WriteResult({ "nInserted" : 1 })
+> db.review.insert({rid:6,hid:6,rname:"Patient6"})
+WriteResult({ "nInserted" : 1 })
+> db.review.insert({rid:7,hid:7,rname:"Patient7"})
+WriteResult({ "nInserted" : 1 })
+> db.review.insert({rid:8,hid:8,rname:"Patient8"})
+WriteResult({ "nInserted" : 1 })
+> db.review.insert({rid:9,hid:9,rname:"Patient9"})
+WriteResult({ "nInserted" : 1 })
+> db.review.insert({rid:10,hid:10,rname:"Patient10"})
+WriteResult({ "nInserted" : 1 })
+> db.review.find({}).pretty()
+{
+	"_id" : ObjectId("657ac1ffe7efdf50d9a61998"),
+	"rid" : 1,
+	"hid" : 1,
+	"rname" : "Patient1"
+}
+{
+	"_id" : ObjectId("657ac20de7efdf50d9a61999"),
+	"rid" : 2,
+	"hid" : 2,
+	"rname" : "Patient2"
+}
+{
+	"_id" : ObjectId("657ac21de7efdf50d9a6199a"),
+	"rid" : 3,
+	"hid" : 3,
+	"rname" : "Patient3"
+}
+{
+	"_id" : ObjectId("657ac22ee7efdf50d9a6199b"),
+	"rid" : 3,
+	"hid" : 3,
+	"rname" : "Patient3"
+}
+{
+	"_id" : ObjectId("657ac23ce7efdf50d9a6199c"),
+	"rid" : 4,
+	"hid" : 4,
+	"rname" : "Patient4"
+}
+{
+	"_id" : ObjectId("657ac24ae7efdf50d9a6199d"),
+	"rid" : 5,
+	"hid" : 5,
+	"rname" : "Patient5"
+}
+{
+	"_id" : ObjectId("657ac256e7efdf50d9a6199e"),
+	"rid" : 6,
+	"hid" : 6,
+	"rname" : "Patient6"
+}
+{
+	"_id" : ObjectId("657ac262e7efdf50d9a6199f"),
+	"rid" : 7,
+	"hid" : 7,
+	"rname" : "Patient7"
+}
+{
+	"_id" : ObjectId("657ac271e7efdf50d9a619a0"),
+	"rid" : 8,
+	"hid" : 8,
+	"rname" : "Patient8"
+}
+{
+	"_id" : ObjectId("657ac287e7efdf50d9a619a1"),
+	"rid" : 9,
+	"hid" : 9,
+	"rname" : "Patient9"
+}
+{
+	"_id" : ObjectId("657ac29ae7efdf50d9a619a2"),
+	"rid" : 10,
+	"hid" : 10,
+	"rname" : "Patient10"
+}
+> db.hospital.find({specialization:"Pediatric"}).pretty()
+{
+	"_id" : ObjectId("657abdb6e7efdf50d9a6198e"),
+	"hname" : "cityhospital",
+	"city" : "Nashik",
+	"specialization" : "Pediatric",
+	"dname" : "Dr.deshmukh",
+	"rating" : 4.5
+}
+{
+	"_id" : ObjectId("657abdffe7efdf50d9a6198f"),
+	"hname" : "Pediatriccare",
+	"city" : "Nashik",
+	"specialization" : "Pediatric",
+	"dname" : "Dr.patel",
+	"rating" : 3.8
+}
+{
+	"_id" : ObjectId("657ac112e7efdf50d9a61995"),
+	"hname" : "Metrohospital",
+	"city" : "Mumbai",
+	"specialization" : "Pediatric",
+	"dname" : "Dr.Gupta",
+	"rating" : 4.1
+}
+> db.hospital.find({city:"Nashik"}).pretty()
+{
+	"_id" : ObjectId("657abdb6e7efdf50d9a6198e"),
+	"hname" : "cityhospital",
+	"city" : "Nashik",
+	"specialization" : "Pediatric",
+	"dname" : "Dr.deshmukh",
+	"rating" : 4.5
+}
+{
+	"_id" : ObjectId("657abdffe7efdf50d9a6198f"),
+	"hname" : "Pediatriccare",
+	"city" : "Nashik",
+	"specialization" : "Pediatric",
+	"dname" : "Dr.patel",
+	"rating" : 3.8
+}
+{
+	"_id" : ObjectId("657abe8fe7efdf50d9a61991"),
+	"hname" : "Gynaecologycenter",
+	"city" : "Nashik",
+	"specialization" : "Gynaecology",
+	"dname" : "Dr.Sharma",
+	"rating" : 4.9
+}
+{
+	"_id" : ObjectId("657ac09de7efdf50d9a61993"),
+	"hname" : "generalhospital",
+	"city" : "Nashik",
+	"specialization" : "General",
+	"dname" : "Dr.deshmukh",
+	"rating" : 4.7
+}
+{
+	"_id" : ObjectId("657ac0d2e7efdf50d9a61994"),
+	"hname" : "ortho&more",
+	"city" : "Nashik",
+	"specialization" : "General",
+	"dname" : "Dr.Sharma",
+	"rating" : 3
+}
+{
+	"_id" : ObjectId("657ac14ce7efdf50d9a61996"),
+	"hname" : "Womenshealthcare",
+	"city" : "Nashik",
+	"specialization" : "Orthopedic",
+	"dname" : "Dr.Singh",
+	"rating" : 8.2
+}
+> db.hospital.find({dname:"Dr.deshmukh"}).pretty()
+{
+	"_id" : ObjectId("657abdb6e7efdf50d9a6198e"),
+	"hname" : "cityhospital",
+	"city" : "Nashik",
+	"specialization" : "Pediatric",
+	"dname" : "Dr.deshmukh",
+	"rating" : 4.5
+}
+{
+	"_id" : ObjectId("657ac09de7efdf50d9a61993"),
+	"hname" : "generalhospital",
+	"city" : "Nashik",
+	"specialization" : "General",
+	"dname" : "Dr.deshmukh",
+	"rating" : 4.7
+}
+> db.hospital.find({rating:{$gte:4}}).pretty()
+{
+	"_id" : ObjectId("657abdb6e7efdf50d9a6198e"),
+	"hname" : "cityhospital",
+	"city" : "Nashik",
+	"specialization" : "Pediatric",
+	"dname" : "Dr.deshmukh",
+	"rating" : 4.5
+}
+{
+	"_id" : ObjectId("657abe4de7efdf50d9a61990"),
+	"hname" : "Orthoclinic",
+	"city" : "Mumbai",
+	"specialization" : "Gynaecology",
+	"dname" : "Dr.Singh",
+	"rating" : 4.2
+}
+{
+	"_id" : ObjectId("657abe8fe7efdf50d9a61991"),
+	"hname" : "Gynaecologycenter",
+	"city" : "Nashik",
+	"specialization" : "Gynaecology",
+	"dname" : "Dr.Sharma",
+	"rating" : 4.9
+}
+{
+	"_id" : ObjectId("657ac09de7efdf50d9a61993"),
+	"hname" : "generalhospital",
+	"city" : "Nashik",
+	"specialization" : "General",
+	"dname" : "Dr.deshmukh",
+	"rating" : 4.7
+}
+{
+	"_id" : ObjectId("657ac112e7efdf50d9a61995"),
+	"hname" : "Metrohospital",
+	"city" : "Mumbai",
+	"specialization" : "Pediatric",
+	"dname" : "Dr.Gupta",
+	"rating" : 4.1
+}
+{
+	"_id" : ObjectId("657ac14ce7efdf50d9a61996"),
+	"hname" : "Womenshealthcare",
+	"city" : "Nashik",
+	"specialization" : "Orthopedic",
+	"dname" : "Dr.Singh",
+	"rating" : 8.2
+}
+{
+	"_id" : ObjectId("657ac198e7efdf50d9a61997"),
+	"hname" : "Childwellnessclinic",
+	"city" : "Pune",
+	"specialization" : "General",
+	"dname" : "Dr.Patel",
+	"rating" : 5.3
+}
+> 
+
+
+
+
+
+
+
