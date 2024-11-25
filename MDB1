@@ -1,0 +1,169 @@
+db.owner.insert({ono:1,oname:"Mr.Patil",address:"Mumbai"})
+WriteResult({ "nInserted" : 1 })
+> db.owner.insert({ono:2,oname:"Mrs.Sharma",address:"Pune"})
+WriteResult({ "nInserted" : 1 })
+> 
+> db.owner.insert({ono:3,oname:"Mr.Singh",address:"Nashik"});
+WriteResult({ "nInserted" : 1 })
+> db.owner.insert({ono:4,oname:"Ms.Gupta",address:"Nashik"});
+WriteResult({ "nInserted" : 1 })
+> db.owner.insert({ono:5,oname:"Mr.Kumar",address:"Pune"});
+WriteResult({ "nInserted" : 1 })
+> db.owner.find({}).pretty()
+{
+	"_id" : ObjectId("6576c039bd7e4d8e477fc3b7"),
+	"ono" : 1,
+	"oname" : "Mr.Patil",
+	"address" : "Mumbai"
+}
+{
+	"_id" : ObjectId("6576c077bd7e4d8e477fc3b8"),
+	"ono" : 2,
+	"oname" : "Mrs.Sharma",
+	"address" : "Pune"
+}
+{
+	"_id" : ObjectId("6576c127bd7e4d8e477fc3b9"),
+	"ono" : 3,
+	"oname" : "Mr.Singh",
+	"address" : "Nashik"
+}
+{
+	"_id" : ObjectId("6576c1c5bd7e4d8e477fc3ba"),
+	"ono" : 4,
+	"oname" : "Ms.Gupta",
+	"address" : "Nashik"
+}
+{
+	"_id" : ObjectId("6576c1f0bd7e4d8e477fc3bb"),
+	"ono" : 5,
+	"oname" : "Mr.Kumar",
+	"address" : "Pune"
+}
+> db.property.insert({propno:1,propname:"1BHK",address:"Pune",rate:420000,oname:"Mr.Patil"})
+WriteResult({ "nInserted" : 1 })
+> db.property.insert({propno:1,propname:"3BHK",address:"Mumbai",rate:300000,oname:"Mr.Patil"})
+WriteResult({ "nInserted" : 1 })
+> db.property.insert({propno:2,propname:"2BHK",address:"Nashik",rate:140000,oname:"Mr.Kumar"})
+WriteResult({ "nInserted" : 1 })
+> db.property.insert({propno:3,propname:"1BHK",address:"Nashik",rate:280000,oname:"Ms.Gupta"})
+WriteResult({ "nInserted" : 1 })
+> db.property.insert({propno:4,propname:"4BHK",address:"Mumbai",rate:450000,oname:"Mrs.Sharma"})
+WriteResult({ "nInserted" : 1 })
+> db.preperty.find({}).pretty();
+> db.preperty.find({}).pretty()
+> db.property.find({}).pretty()
+{
+	"_id" : ObjectId("6576c316bd7e4d8e477fc3bc"),
+	"propno" : 1,
+	"propname" : "1BHK",
+	"address" : "Pune",
+	"rate" : 420000,
+	"oname" : "Mr.Patil"
+}
+{
+	"_id" : ObjectId("6576c343bd7e4d8e477fc3bd"),
+	"propno" : 1,
+	"propname" : "3BHK",
+	"address" : "Mumbai",
+	"rate" : 300000,
+	"oname" : "Mr.Patil"
+}
+{
+	"_id" : ObjectId("6576c37dbd7e4d8e477fc3be"),
+	"propno" : 2,
+	"propname" : "2BHK",
+	"address" : "Nashik",
+	"rate" : 140000,
+	"oname" : "Mr.Kumar"
+}
+{
+	"_id" : ObjectId("6576c3afbd7e4d8e477fc3bf"),
+	"propno" : 3,
+	"propname" : "1BHK",
+	"address" : "Nashik",
+	"rate" : 280000,
+	"oname" : "Ms.Gupta"
+}
+{
+	"_id" : ObjectId("6576c3f8bd7e4d8e477fc3c0"),
+	"propno" : 4,
+	"propname" : "4BHK",
+	"address" : "Mumbai",
+	"rate" : 450000,
+	"oname" : "Mrs.Sharma"
+}
+
+> db.property.find({},{address:1,propname:1,rate:1,oname:1}).pretty()
+{
+	"_id" : ObjectId("6576c316bd7e4d8e477fc3bc"),
+	"propname" : "1BHK",
+	"address" : "Pune",
+	"rate" : 420000,
+	"oname" : "Mr.Patil"
+}
+{
+	"_id" : ObjectId("6576c343bd7e4d8e477fc3bd"),
+	"propname" : "3BHK",
+	"address" : "Mumbai",
+	"rate" : 300000,
+	"oname" : "Mr.Patil"
+}
+{
+	"_id" : ObjectId("6576c37dbd7e4d8e477fc3be"),
+	"propname" : "2BHK",
+	"address" : "Nashik",
+	"rate" : 140000,
+	"oname" : "Mr.Kumar"
+}
+{
+	"_id" : ObjectId("6576c3afbd7e4d8e477fc3bf"),
+	"propname" : "1BHK",
+	"address" : "Nashik",
+	"rate" : 280000,
+	"oname" : "Ms.Gupta"
+}
+{
+	"_id" : ObjectId("6576c3f8bd7e4d8e477fc3c0"),
+	"propname" : "4BHK",
+	"address" : "Mumbai",
+	"rate" : 450000,
+	"oname" : "Mrs.Sharma"
+}
+
+> db.property.find({oname:"Mr.Patil"}).sort({rate:-1}).limit(1)
+{ "_id" : ObjectId("6576c316bd7e4d8e477fc3bc"), "propno" : 1, "propname" : "1BHK", "address" : "Pune", "rate" : 420000, "oname" : "Mr.Patil" }
+> db.property.find({address:"Nashik"})
+{ "_id" : ObjectId("6576c37dbd7e4d8e477fc3be"), "propno" : 2, "propname" : "2BHK", "address" : "Nashik", "rate" : 140000, "oname" : "Mr.Kumar" }
+{ "_id" : ObjectId("6576c3afbd7e4d8e477fc3bf"), "propno" : 3, "propname" : "1BHK", "address" : "Nashik", "rate" : 280000, "oname" : "Ms.Gupta" }
+> db.property.find({address:"Nashik"}).pretty()
+{
+	"_id" : ObjectId("6576c37dbd7e4d8e477fc3be"),
+	"propno" : 2,
+	"propname" : "2BHK",
+	"address" : "Nashik",
+	"rate" : 140000,
+	"oname" : "Mr.Kumar"
+}
+{
+	"_id" : ObjectId("6576c3afbd7e4d8e477fc3bf"),
+	"propno" : 3,
+	"propname" : "1BHK",
+	"address" : "Nashik",
+	"rate" : 280000,
+	"oname" : "Ms.Gupta"
+}
+
+
+
+> db.property.find({rate:{$lt:200000}}).pretty()
+{
+	"_id" : ObjectId("6576c37dbd7e4d8e477fc3be"),
+	"propno" : 2,
+	"propname" : "2BHK",
+	"address" : "Nashik",
+	"rate" : 140000,
+	"oname" : "Mr.Kumar"
+
+
+
