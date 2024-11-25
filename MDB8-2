@@ -1,0 +1,180 @@
+> use inventory
+switched to db inventory
+> db.item.insert({iid:1,iname:"Laptop",itags:3,istatus:"A",iheight:10.5,iquantity:400})
+WriteResult({ "nInserted" : 1 })
+> db.item.insert({iid:2,iname:"Planner",itags:4,istatus:"B",iheight:8.2,iquantity:400})
+WriteResult({ "nInserted" : 1 })
+> db.item.insert({iid:3,iname:"Headphones",itags:2,istatus:"C",iheight:6.5,iquantity:20})
+WriteResult({ "nInserted" : 1 })
+> db.item.insert({iid:4,iname:"Chair",itags:5,istatus:"A",iheight:12,iquantity:30})
+WriteResult({ "nInserted" : 1 })
+> db.item.insert({iid:5,iname:"Desk",itags:3,istatus:"B",iheight:9.8,iquantity:150})
+WriteResult({ "nInserted" : 1 })
+> db.item.find({}).pretty()
+{
+	"_id" : ObjectId("657960d1e8c81c4ffe4e4588"),
+	"iid" : 1,
+	"iname" : "Laptop",
+	"itags" : "A",
+	"istatus" : 10,
+	"iheight" : 5,
+	"iquantity" : 400
+{
+	"_id" : ObjectId("6579654dd63acaf40d14526b"),
+	"iid" : 2,
+	"iname" : "Planner",
+	"itags" : 4,
+	"istatus" : "B",
+	"iheight" : 8.2,
+	"iquantity" : 400
+}
+{
+	"_id" : ObjectId("657965b7d63acaf40d14526c"),
+	"iid" : 3,
+	"iname" : "Headphones",
+	"itags" : 2,
+	"istatus" : "C",
+	"iheight" : 6.5,
+	"iquantity" : 20
+}
+{
+	"_id" : ObjectId("657965ecd63acaf40d14526d"),
+	"iid" : 4,
+	"iname" : "Chair",
+	"itags" : 5,
+	"istatus" : "A",
+	"iheight" : 12,
+	"iquantity" : 30
+}
+{
+	"_id" : ObjectId("65796641d63acaf40d14526e"),
+	"iid" : 5,
+	"iname" : "Desk",
+	"itags" : 3,
+	"istatus" : "B",
+	"iheight" : 9.8,
+	"iquantity" : 150
+}
+> db.warehouse.insert({wid:101,wname:"mainwarehouse"})
+WriteResult({ "nInserted" : 1 })
+> db.warehouse.insert({wid:102,wname:"backupwarehouse"})
+WriteResult({ "nInserted" : 1 })
+> db.warehouse.insert({wid:103,wname:"localwarehouse"})
+WriteResult({ "nInserted" : 1 })
+> db.warehouse.find({}).pretty()
+{
+	"_id" : ObjectId("657962543f7f94a707a82966"),
+	"wid" : 101,
+	"wname" : "Mainwarehouse"
+}
+{
+	"_id" : ObjectId("657962703f7f94a707a82967"),
+	"wid" : 102,
+	"wname" : "Backupwarehouse"
+}
+{
+	"_id" : ObjectId("657962833f7f94a707a82968"),
+	"wid" : 103,
+	"wname" : "Localstorage"
+}
+{
+	"_id" : ObjectId("65796697d63acaf40d14526f"),
+	"wid" : 101,
+	"wname" : "mainwarehouse"
+}
+{
+	"_id" : ObjectId("657966a7d63acaf40d145270"),
+	"wid" : 102,
+	"wname" : "backupwarehouse"
+}
+{
+	"_id" : ObjectId("657966b6d63acaf40d145271"),
+	"wid" : 103,
+	"wname" : "localwarehouse"
+}
+> db.item.find({iquantity:{$gt:300}}).pretty()
+{
+	"_id" : ObjectId("657960d1e8c81c4ffe4e4588"),
+	"iid" : 1,
+	"iname" : "Laptop",
+	"itags" : "A",
+	"istatus" : 10,
+	"iheight" : 5,
+	"iquantity" : 400
+}
+{
+	"_id" : ObjectId("6579652ad63acaf40d14526a"),
+	"iid" : 1,
+	"iname" : "Laptop",
+	"itags" : 3,
+	"istatus" : "A",
+	"iheight" : 10.5,
+	"iquantity" : 400
+}
+{
+	"_id" : ObjectId("6579654dd63acaf40d14526b"),
+	"iid" : 2,
+	"iname" : "Planner",
+	"itags" : 4,
+	"istatus" : "B",
+	"iheight" : 8.2,
+	"iquantity" : 400
+}
+> db.item.find({itags:{$lt:5}}).pretty()
+{
+	"_id" : ObjectId("6579652ad63acaf40d14526a"),
+	"iid" : 1,
+	"iname" : "Laptop",
+	"itags" : 3,
+	"istatus" : "A",
+	"iheight" : 10.5,
+	"iquantity" : 400
+}
+{
+	"_id" : ObjectId("6579654dd63acaf40d14526b"),
+	"iid" : 2,
+	"iname" : "Planner",
+	"itags" : 4,
+	"istatus" : "B",
+	"iheight" : 8.2,
+	"iquantity" : 400
+}
+{
+	"_id" : ObjectId("657965b7d63acaf40d14526c"),
+	"iid" : 3,
+	"iname" : "Headphones",
+	"itags" : 2,
+	"istatus" : "C",
+	"iheight" : 6.5,
+	"iquantity" : 20
+}
+{
+	"_id" : ObjectId("65796641d63acaf40d14526e"),
+	"iid" : 5,
+	"iname" : "Desk",
+	"itags" : 3,
+	"istatus" : "B",
+	"iheight" : 9.8,
+	"iquantity" : 150
+}
+> db.item.find({$and:[{istatus:{$eq:"B"}},{iheight:{$lt:50}}]}).pretty()
+{
+	"_id" : ObjectId("6579654dd63acaf40d14526b"),
+	"iid" : 2,
+	"iname" : "Planner",
+	"itags" : 4,
+	"istatus" : "B",
+	"iheight" : 8.2,
+	"iquantity" : 400
+}
+{
+	"_id" : ObjectId("65796641d63acaf40d14526e"),
+	"iid" : 5,
+	"iname" : "Desk",
+	"itags" : 3,
+	"istatus" : "B",
+	"iheight" : 9.8,
+	"iquantity" : 150
+}
+ db.item.find({$and:[{iname:"Planner"},{iquantity:{$lt:20}}]}).pretty()
+
