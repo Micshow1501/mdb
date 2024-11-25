@@ -1,0 +1,189 @@
+> use banking
+switched to db banking
+> db.customer.insert({cid:1,cname:"Johndoe",atype:"Saving",adate:'2020-01-01'})
+WriteResult({ "nInserted" : 1 })
+> db.customer.insert({cid:2,cname:"Bobjohnson",atype:"checking",adate:'2020-01-01'})
+WriteResult({ "nInserted" : 1 })
+> db.customer.insert({cid:3,cname:"Janesmith",atype:"loan",adate:'2020-03-15'})
+WriteResult({ "nInserted" : 1 })
+> db.customer.insert({cid:4,cname:"Alicebrown",atype:"saving",adate:'2020-01-01'})
+WriteResult({ "nInserted" : 1 })
+> db.customer.insert({cid:5,cname:"Charliegreen",atype:"loan",adate:'2020-02-10'})
+WriteResult({ "nInserted" : 1 })
+> db.customer.find({}).pretty()
+{
+	"_id" : ObjectId("65797352153deb3df89095ff"),
+	"cid" : 1,
+	"cname" : "Johndoe",
+	"odate" : "2020-01-02",
+	"atype" : "Saving"
+}
+{
+	"_id" : ObjectId("6579742e9966502142f3eb7c"),
+	"cid" : 1,
+	"cname" : "Johndoe",
+	"atype" : "Saving",
+	"adate" : "2020-01-01"
+}
+{
+	"_id" : ObjectId("657974529966502142f3eb7d"),
+	"cid" : 2,
+	"cname" : "Janesmith",
+	"atype" : "Downtown",
+	"adate" : "2020-01-01"
+}
+{
+	"_id" : ObjectId("657974819966502142f3eb7e"),
+	"cid" : 3,
+	"cname" : "Bobjohnson",
+	"atype" : "Main",
+	"adate" : "2020-03-15"
+}
+{
+	"_id" : ObjectId("6579751eb47ed6868cce1410"),
+	"cid" : 1,
+	"cname" : "Johndoe",
+	"atype" : "Saving",
+	"adate" : "2020-01-01"
+}
+{
+	"_id" : ObjectId("6579754eb47ed6868cce1411"),
+	"cid" : 2,
+	"cname" : "Bobjohnson",
+	"atype" : "checking",
+	"adate" : "2020-01-01"
+}
+{
+	"_id" : ObjectId("6579758eb47ed6868cce1412"),
+	"cid" : 3,
+	"cname" : "Janesmith",
+	"atype" : "loan",
+	"adate" : "2020-03-15"
+}
+{
+	"_id" : ObjectId("657975c7b47ed6868cce1413"),
+	"cid" : 4,
+	"cname" : "Alicebrown",
+	"atype" : "saving",
+	"adate" : "2020-01-01"
+}
+{
+	"_id" : ObjectId("657975f4b47ed6868cce1414"),
+	"cid" : 5,
+	"cname" : "Charliegreen",
+	"atype" : "loan",
+	"adate" : "2020-02-10"
+}
+> db.account.insert({aid:101,branch:"main",tdate:'2020-01-02',amount:500})
+WriteResult({ "nInserted" : 1 })
+> db.account.insert({aid:102,branch:"downtown",tdate:'2020-01-05',amount:200})
+WriteResult({ "nInserted" : 1 })
+> db.account.insert({aid:103,branch:"main",tdate:'2020-03-20',amount:1000})
+WriteResult({ "nInserted" : 1 })
+> db.account.insert({aid:104,branch:"downtown",tdate:'2020-01-03',amount:300})
+WriteResult({ "nInserted" : 1 })
+> db.account.insert({aid:105,branch:"main",tdate:'2020-02-15',amount:800})
+WriteResult({ "nInserted" : 1 })
+> db.account.find({}).pretty()
+{
+	"_id" : ObjectId("65797755b47ed6868cce1415"),
+	"aid" : 101,
+	"branch" : "main",
+	"tdate" : "2020-01-02",
+	"amount" : 500
+}
+{
+	"_id" : ObjectId("65797766b47ed6868cce1416"),
+	"aid" : 102,
+	"branch" : "downtown",
+	"tdate" : "2020-01-05",
+	"amount" : 200
+}
+{
+	"_id" : ObjectId("65797795b47ed6868cce1417"),
+	"aid" : 103,
+	"branch" : "main",
+	"tdate" : "2020-03-20",
+	"amount" : 1000
+}
+{
+	"_id" : ObjectId("657977ceb47ed6868cce1418"),
+	"aid" : 104,
+	"branch" : "downtown",
+	"tdate" : "2020-01-03",
+	"amount" : 300
+}
+{
+	"_id" : ObjectId("657977fdb47ed6868cce1419"),
+	"aid" : 105,
+	"branch" : "main",
+	"tdate" : "2020-02-15",
+	"amount" : 800
+}
+> db.customer.find({cname:/^C/}).pretty()
+{
+	"_id" : ObjectId("657975f4b47ed6868cce1414"),
+	"cid" : 5,
+	"cname" : "Charliegreen",
+	"atype" : "loan",
+	"adate" : "2020-02-10"
+}
+> db.customer.find({adate:"2020-01-01"}).pretty()
+{
+	"_id" : ObjectId("6579742e9966502142f3eb7c"),
+	"cid" : 1,
+	"cname" : "Johndoe",
+	"atype" : "Saving",
+	"adate" : "2020-01-01"
+}
+{
+	"_id" : ObjectId("657974529966502142f3eb7d"),
+	"cid" : 2,
+	"cname" : "Janesmith",
+	"atype" : "Downtown",
+	"adate" : "2020-01-01"
+}
+{
+	"_id" : ObjectId("6579751eb47ed6868cce1410"),
+	"cid" : 1,
+	"cname" : "Johndoe",
+	"atype" : "Saving",
+	"adate" : "2020-01-01"
+}
+{
+	"_id" : ObjectId("6579754eb47ed6868cce1411"),
+	"cid" : 2,
+	"cname" : "Bobjohnson",
+	"atype" : "checking",
+	"adate" : "2020-01-01"
+}
+{
+	"_id" : ObjectId("657975c7b47ed6868cce1413"),
+	"cid" : 4,
+	"cname" : "Alicebrown",
+	"atype" : "saving",
+	"adate" : "2020-01-01"
+}
+> db.customer.find({atype:"Saving"}).pretty()
+{
+	"_id" : ObjectId("65797352153deb3df89095ff"),
+	"cid" : 1,
+	"cname" : "Johndoe",
+	"odate" : "2020-01-02",
+	"atype" : "Saving"
+}
+{
+	"_id" : ObjectId("6579742e9966502142f3eb7c"),
+	"cid" : 1,
+	"cname" : "Johndoe",
+	"atype" : "Saving",
+	"adate" : "2020-01-01"
+}
+{
+	"_id" : ObjectId("6579751eb47ed6868cce1410"),
+	"cid" : 1,
+	"cname" : "Johndoe",
+	"atype" : "Saving",
+	"adate" : "2020-01-01"
+}
+
